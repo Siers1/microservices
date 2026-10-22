@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: gateway
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.security.autoconfigure.ReactiveUserDetailsServiceAutoConfiguration
   cloud:
     gateway:
       server:
@@ -15,3 +18,6 @@ spring:
                 - Path=/api/user/**
               filters:
                 - StripPrefix=1
+
+jwt:
+  secret: "siersi"

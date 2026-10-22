@@ -1,15 +1,14 @@
 package com.siersi.user.controller
 
+import com.siersi.common.utils.Result
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/user")
 class TestController {
 
     @GetMapping("/test")
-    fun test(): String {
-        return "Hello World!"
+    fun test(): Result<String> {
+        return Result.success(data = "hello world!")
     }
 }
